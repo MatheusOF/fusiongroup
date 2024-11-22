@@ -1,4 +1,27 @@
 
+        let texto = "BANANINHA "; // O texto a ser rolado
+        let titulo = texto; // O título inicial
+        let index = 0;
+
+        function rolarTitulo() {
+            document.title = titulo.substring(index) + titulo.substring(0, index); // Move o texto
+            index = (index + 1) % texto.length; // Mantém o índice dentro do limite do texto
+        }
+
+        setInterval(rolarTitulo, 150); // Atualiza a cada 150ms para criar o efeito de rolagem
+
+
+ // Obtém o botão e o elemento de áudio
+var playButton = document.getElementById("resultadodenuncia");
+var audio = document.getElementById("audio");
+
+// Adiciona um ouvinte de evento para o botão
+playButton.addEventListener("click", function() {
+    audio.play(); // Toca o áudio quando o botão é pressionado
+});
+
+
+
 
 function showDenuncia() {
     document.getElementById('denuncia').style.display = 'block';
@@ -174,7 +197,8 @@ function copiarRelatorio2(){
 
     try{
         document.execCommand('copy');
-        alert('Relatório copiado para a área de transferência');                
+        alert('COPIOU O RELÁTORIO NÉ SAFADO');    
+		
     } catch (err) {
         alert('Erro ao copiar o relatório.');
     }
